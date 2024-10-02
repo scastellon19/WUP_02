@@ -7,6 +7,7 @@ output:
     df_print: paged
 ---
 
+
 ```{r include=FALSE,echo=FALSE}
 require(tidyverse)
 require(tigerstats)
@@ -21,9 +22,19 @@ veggy <- cabbages
  
 ### Is there a difference in average VitC between c39 and c52 cultivation methods?  
 
+$H_0$: There is no difference in the VitC average between c39 and C52  
+$H_A$: There is a difference in the VitC average between C39 and C52  
+
+
 # Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
+
+VitC ~ Cultivation method  
+The variable VitC is an interger which is  numerical and cultivation is factor which make it categorical.   
+using file Num ~ Cat   
+
+
 
 # Results
 
@@ -35,9 +46,20 @@ veggy <- cabbages
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+```{r}
+boxplot(VitC~Cult,data=veggy)
+```
+
+This boxplot show that the VitC in C52 is greater than C52. 
+
+
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+```{r}
+favstats(VitC~Cult,data=veggy)
+```
 
 ## Inferential Results
 
